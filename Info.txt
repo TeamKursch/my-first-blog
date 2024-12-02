@@ -1,0 +1,21 @@
+alle "python" commandos in der Console können auch durch "py" ausgeführt werden ()
+Virtuelle Umgebung erstellen: python -m venv [myvenv]
+Virtuelle Umgebung starten: myvenv\Scripts\activate
+In PowerShell: myvenv\Scripts\activate.ps1
+Wenn Skripte nicht ausgeführt werden: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+In gestarteter virtueller Umgebung, (myvenv) muss vorab stehen: 
+    Einmalig anlegen:
+        upgrade pip: python -m pip install --upgrade pip (pip = Software für Django Installation)
+        Django Installation: pip install -r requirements.txt (requirements.txt = Abhängigkeiten, die von pip install installiert werden sollen)
+        Django Project neu erstellen: django-admin.exe startproject [mysite] .
+        Datenbank erstellen: python manage.py migrate
+    Kommmandos in der erstellten Struktur:
+        Webserver starten: py manage.py runserver
+
+Git-Repository
+    Initialisierung (einmal pro Project):
+        git init
+        git config --global user.name "Dein Name"
+        git config --global user.email du@example.com
+    
