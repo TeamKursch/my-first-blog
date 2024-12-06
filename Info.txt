@@ -30,6 +30,8 @@ Git-Repository
     .gitignore erstellen (um lokale Dateien auszuschließen)
     git add . (speichern der Einstellungen) <Problem mit Port 443. Workarround = Stadtnetz abschalten>
     git status (überprüfen der Einstellungen)
+    git commit -m "Änderungstext" (Änderungen kommentieren)
+    git push (Upload Änderungen) <Problem mit Port 443. Workarround = Stadtnetz abschalten>
 
 Site auf PythonAnywhere konfigurieren
     Auf der HP:
@@ -40,6 +42,9 @@ Site auf PythonAnywhere konfigurieren
         Bei mir: pa_autoconfigure_django.py --python=3.10 https://github.com/TeamKursch/my-first-blog.git (Code von GitHub, virtuelle Umgebung einrichten, DB einrichten...)
         python manage.py createsuperuser
         ****Seite ist Online****
+        Seite aktualisieren:
+        cd ~/https://mungopark.eu.pythonanywhere.com/
+        git pull
 
 URLs erzeugen
     in mysite/urls.py
@@ -55,4 +60,3 @@ Erweiterungen
 
 templates erzeugen
     in blog\templates\blog\post_list.html
-    
