@@ -11,11 +11,48 @@ In gestarteter virtueller Umgebung, (myvenv) muss vorab stehen:
         Django Project neu erstellen: django-admin.exe startproject [mysite] .
         Datenbank erstellen: python manage.py migrate
     Kommmandos in der erstellten Struktur:
-        Webserver starten: py manage.py runserver
+        python manage.py createsuperuser
+        Webserver starten: py manage.py runserver   (Abbruch mit Strg+C)
+        python manage.py startapp blog (Erstellen der eigentlichen App)
+
+blog/models.py 
+    (öffnen und Code eingeben)
+
+In gestarteter virtueller Umgebung, (myvenv) muss vorab stehen: 
+        python manage.py makemigrations blog (Django Bearbeitung von blog mitteilen)
+        python manage.py migrate blog (Model der Datenbank hinzufügen)
 
 Git-Repository
     Initialisierung (einmal pro Project):
         git init
         git config --global user.name "Dein Name"
         git config --global user.email du@example.com
+    .gitignore erstellen (um lokale Dateien auszuschließen)
+    git add . (speichern der Einstellungen) <Problem mit Port 443. Workarround = Stadtnetz abschalten>
+    git status (überprüfen der Einstellungen)
+
+Site auf PythonAnywhere konfigurieren
+    Auf der HP:
+        New console <$ Bash> klicken
+    In der Web Console: 
+        pip install --user pythonanywhere (Hilfsprogramm zum Code holen von GitHub, einmalig)
+        pa_autoconfigure_django.py --python=3.10 https://github.com/<your-github-username>/my-first-blog.git
+        Bei mir: pa_autoconfigure_django.py --python=3.10 https://github.com/TeamKursch/my-first-blog.git (Code von GitHub, virtuelle Umgebung einrichten, DB einrichten...)
+        python manage.py createsuperuser
+        ****Seite ist Online****
+
+URLs erzeugen
+    in mysite/urls.py
+    in blog/urls.py
+    blog/views.py
+
+Erweiterungen
+    code gpt
+    HTML/CSS/JavaScript Snippets
+    Restore Terminals (nI)
+    es6-string-html (nI)
+    IntelliCode
+
+templates erzeugen
+    in blog\templates\blog\post_list.html
     
